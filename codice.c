@@ -8,7 +8,7 @@
 
 #define MAX_INPUT 10
 
-void estrai_dati(int ac, char **av, int *vett, int lung)
+void estrai_dati(int ac, char **av, int *vett, int *lung)
 {
 	*lung = ac - 1;
 
@@ -41,7 +41,7 @@ void inserisci(int nuovo_dato, int num_dati_ord, int *vett)
 	}
 }
 
-void ordina_dati(const int *dati_non_ordinati, int *dati_ordinati, int* lung)
+void ordina_dati(const int *dati_non_ordinati, int *dati_ordinati, int lung)
 {
 	for (int i = 0; i < lung; ++i)
 		inserisci(dati_non_ordinati[i], i, dati_ordinati);
