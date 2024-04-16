@@ -37,7 +37,7 @@ void inserisci(int nuovo_dato, int num_dati_ord, int *vett)
 			vett[i] = nuovo_dato;
 			return;
 		}	
-	vett[num_dati_ordinati] = nuovo_dato;
+	vett[num_dati_ord] = nuovo_dato;
 	}
 }
 
