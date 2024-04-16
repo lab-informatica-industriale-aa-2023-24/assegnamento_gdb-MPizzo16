@@ -12,7 +12,7 @@ void estrai_dati(int ac, char **av, int *vett, int *lung)
 {
 	*lung = ac - 1;
 
-	for (int i = 0; i < lung; ++i)
+	for (int i = 0; i < *lung; ++i)
 		vett[i] = atoi(av[i+1]);
 }
 
@@ -24,7 +24,7 @@ void fai_spazio(int posizione, int *vett, int lung)
 
 void inserisci(int nuovo_dato, int num_dati_ord, int *vett)
 { 
-	if (num_dati_ord = 0)  { // il vettore è vuoto, facile
+	if (num_dati_ord == 0)  { // il vettore è vuoto, facile
 		vett[0] = nuovo_dato;
 		return;
 	}
@@ -37,8 +37,8 @@ void inserisci(int nuovo_dato, int num_dati_ord, int *vett)
 			vett[i] = nuovo_dato;
 			return;
 		}	
+		}
 	vett[num_dati_ord] = nuovo_dato;
-	}
 }
 
 void ordina_dati(const int *dati_non_ordinati, int *dati_ordinati, int lung)
