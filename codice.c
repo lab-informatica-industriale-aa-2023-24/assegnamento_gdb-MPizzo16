@@ -8,17 +8,17 @@
 
 #define MAX_INPUT 10
 
-void estrai_dati(int ac, char **av, int *vett, int *lung)
+void estrai_dati(int ac, char **av, int *vett, int lung)
 {
 	*lung = ac - 1;
 
-	for (int i = 0; i < *lung; ++i)
+	for (int i = 0; i < lung; ++i)
 		vett[i] = atoi(av[i+1]);
 }
 
 void fai_spazio(int posizione, int *vett, int lung)
 {
-	for (int j = lung; j > posizione; --j)
+	for (int j = lung; j >= posizione; --j)
 		vett[j] = vett[j-1];
 }
 
@@ -37,14 +37,14 @@ void inserisci(int nuovo_dato, int num_dati_ord, int *vett)
 			vett[i] = nuovo_dato;
 			return;
 		}	
-	}
 	vett[num_dati_ordinati] = nuovo_dato;
+	}
 }
 
 void ordina_dati(const int *dati_non_ordinati, int *dati_ordinati, int* lung)
 {
 	for (int i = 0; i < lung; ++i)
-		inserisci(dati_non_ordinati[i], i, *dati_ordinati);
+		inserisci(dati_non_ordinati[i], i, dati_ordinati);
 }
 
 void stampa_vettore(const int *vett, int lung)
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 	}
 	int dati_input[MAX_INPUT] = {0};
 	int dati_ordinati[MAX_INPUT] = {0};
-	int num_dati = argc - 1;
+	int num_dati = 0;
 
 	estrai_dati(argc, argv, dati_input, &num_dati);
 	ordina_dati(dati_input, dati_ordinati, num_dati);
